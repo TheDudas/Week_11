@@ -37,14 +37,28 @@ a Bootstrap alert or similar Bootstrap component should appear across the screen
             </div>
 
             <div class="row pt-2">
-                <div class="col fs-2">Player 1 - X</div>
+                <div id='p1' class="col fs-2">Player 1 - X</div>
                 <div class="col fs-2"></div>
-                <div class="col fs-2">Player 2 - O</div>
+                <div id='p2' class="col fs-2">Player 2 - O</div>
             </div>
     </div>
 <!-- Alert Pop-UP  -->
 
+<div id="alert--container"> 
 
+<div id="alertStart" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" role="alert">
+    Player 1 Start! 🏁
+  </div>
+
+  <div id="alertWinner" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" " role="alert">
+    
+  </div>
+
+  <div id="alertDraw" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" " role="alert">
+    It's a Draw!!  You Lose!
+  </div>
+
+</div> 
 <!-- Grid   -->
 
 
@@ -74,10 +88,12 @@ a Bootstrap alert or similar Bootstrap component should appear across the screen
 </div>
 
 
-
-
-
 <!-- Buttons -->
+
+<div class="d-grid col-2 gap-3 mx-auto pt-3">
+<button id="startBtn" type="button" class="btn btn-info btn-lg">START</button>
+<button id="resetBtn" type="button" class="btn btn-dark btn-lg">RESET</button>
+</div>
 
 
 

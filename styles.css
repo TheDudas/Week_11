@@ -16,3 +16,7 @@ a Bootstrap alert or similar Bootstrap component should appear across the screen
 .box {
     min-height: 100px;
 }
+
+#alert--container {
+    min-height: 80px;
+}
