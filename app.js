@@ -111,7 +111,9 @@ const startGame = () => {
             console.log('winner???');
             checkOutcomes();
         }
-        if(winner === false) {
+        if(winner === false) {   
+        
+            // something is wrong here....
 
         if(currentPlayer === player1) {
             currentPlayer = player2;
@@ -120,7 +122,7 @@ const startGame = () => {
             $('#p1').removeClass("bg-light border border-info");
 
         } else {
-            currentPlayer= player1;
+            currentPlayer = player1;
             console.log(turn++);
             $('#p1').addClass("bg-light border border-info");
             $('#p2').removeClass("bg-light border border-info");
