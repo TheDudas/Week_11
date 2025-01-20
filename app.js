@@ -34,16 +34,16 @@ $('#alertDraw').hide();
 let currentPlayer ='';
 
 const winningOutcomes = [
-    [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
-    [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
+    [box0, box1, box2], [box3, box4, box5], [box6, box7, box8],
+    [box0, box3, box6], [box1, box4, box7], [box2, box5, box8],
     [box0, box4, box8], [box2, box4, box6] 
 ];
 
 const endGame=()=> {
     console.log("GAME OVER");
     $(".box").css("pointer-events", "none"); 
-    $('#p1').removeClass("bg-light border border--info");
-    $('#p2').removeClass("bg-light border border--info");
+    $('#p1').removeClass("bg-light border border--warning");
+    $('#p2').removeClass("bg-light border border--warning");
 };
 
 const checkWinner = (currentPlayer, a, b, c) => {
@@ -54,9 +54,9 @@ const checkWinner = (currentPlayer, a, b, c) => {
         a.removeClass('text-info bg-dark');
         b.removeClass('text-info bg-dark');
         c.removeClass('text-info bg-dark');
-        a.addClass('text-dark bg-info');
-        b.addClass('text-dark bg-info');
-        c.addClass('text-dark bg-info');
+        a.addClass('text-dark bg-success');
+        b.addClass('text-dark bg-success');
+        c.addClass('text-dark bg-success');
     
         if(currentPlayer === 'X')  {
             currentPlayer = "Player 1";
@@ -96,7 +96,7 @@ const startGame = () => {
     currentPlayer = player1;
     console.log(currentPlayer); 
 
-    $('#p1').addClass("bg-light border border-info");
+    $('#p1').addClass("bg-light border border-warning");
 
     // show the start Alert  
 
@@ -106,6 +106,7 @@ const startGame = () => {
         $('#alertStart').hide();
 
         $(this).text(currentPlayer);
+
         if(turn > 4) {
             //check winners
             console.log('winner???');
@@ -113,19 +114,18 @@ const startGame = () => {
         }
         if(winner === false) {   
         
-            // something is wrong here....
 
         if(currentPlayer === player1) {
             currentPlayer = player2;
             console.log(turn++); 
-            $('#p2').addClass("bg-light border border-info");
-            $('#p1').removeClass("bg-light border border-info");
+            $('#p2').addClass("bg-light border border-success");
+            $('#p1').removeClass("bg-light border border-success");
 
         } else {
             currentPlayer = player1;
             console.log(turn++);
-            $('#p1').addClass("bg-light border border-info");
-            $('#p2').removeClass("bg-light border border-info");
+            $('#p1').addClass("bg-light border border-success");
+            $('#p2').removeClass("bg-light border border-success");
            }
         }
     })
